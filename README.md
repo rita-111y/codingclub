@@ -6,21 +6,34 @@ class fib
         Scanner scn=new Scanner(System.in);
         int ft=0;
         int st=1;
+        int nt=0;
         System.out.println("enter number of term");
         int n=scn.nextInt();
-        int nt=1;
-        System.out.print(ft+" ");
-        System.out.print(st+" ");
-        
-        for(int i=1;i<=n;i++)
+        if(n==0)
         {
-           
-            ft=st;
-            st=nt;
-            nt=ft+st;
-            System.out.print(nt+" ");
-            
+            System.out.println("enter a valid term");
         }
-        
+        else if(n==1)
+        { 
+            System.out.print(ft+" ");  
+        }
+        else if(n==2)
+        {
+            System.out.println(ft+" ");
+            System.out.println(st+" "); 
+        }
+        else
+        {
+            System.out.print(ft+" ");
+            System.out.print(st+" ");
+          for(int i=3;i<=n;i++)
+           {
+              nt=ft+st;
+               ft=st;
+              st=nt;
+              System.out.print(nt+" ");
+
+           }
+        }
     }
 }
