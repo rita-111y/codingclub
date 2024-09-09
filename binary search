@@ -1,0 +1,43 @@
+import java.util.Scanner;
+class BinarySearch
+{
+    public static void main(String args[])
+    {
+        int a[]=new int[10];
+        int mid, low, high, n,i,ele,pos;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the size of array:");
+        n=sc.nextInt();
+        System.out.println("Enter the elements to the array in the increasing order:");
+        for(i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        low=0;
+        high=n-1;
+        System.out.println("Enter the element to search:");
+        ele=sc.nextInt();
+        while(low<=high)
+        {
+            mid=(low+high)/2;
+            pos=mid+1;
+            if(a[mid]>ele)
+            {
+                high=mid-1;
+            }
+            else if(a[mid]<ele)
+            {
+                low=mid+1;
+            }
+            else
+            {
+                System.out.println("Element is present at "+pos);
+                break;
+            }
+        }
+        if(low>high)
+        {
+            System.out.println("Element is not present in the array");
+        }
+    }
+}
