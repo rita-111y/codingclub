@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class prime
+{
+    public static void main(String args[])
+    {Scanner scn=new Scanner(System.in);
+        System.out.println("enter the upper range");
+        int ur=scn.nextInt();
+        System.out.println("enter the lower range");
+        int lr=scn.nextInt();
+        int prime=0;
+        int com=0;
+        int fac=0;
+        for(int i=lr;i<=ur;i++)
+        {
+            for(int d=1;d<=i;d++)
+                if(i%d==0)
+                {
+                    fac=fac+1;
+                }
+        }
+        
+          if(fac==2)
+          {
+              prime=prime+1;
+          }
+          else
+          {
+            com=com+1;
+          }
+
+        
+        System.out.println(prime+"total prime is");
+        System.out.println(com+"total composite is");
+        
+    }
+}
