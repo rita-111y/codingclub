@@ -1,0 +1,63 @@
+import java.util.Scanner;
+class Multiplication
+{
+    public static void main(String args[])
+    {
+        int a[][],b[][],c[][];
+        a=new int[5][5];
+        b=new int[5][5];
+        c=new int[5][5];
+        int r1,c1,r2,c2,i,k,j;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the rows and colums of matrix 1 respectively:");
+        r1=sc.nextInt();
+        c1=sc.nextInt();
+        System.out.println("Enter the rows and columns of matrix 2 respectively:");
+        r2=sc.nextInt();
+        c2=sc.nextInt();
+        if(r2!=c1)
+        {
+            System.out.println("Multiplication is not possible");
+        }
+        else
+        {
+            System.out.println("Enter the elements to the matrix 1:");
+            for(i=0;i<r1;i++)
+            {
+                for(j=0;j<c1;j++)
+                {
+                    a[i][j]=sc.nextInt();
+                }
+            }
+            System.out.println("Enter the elements to the matrix 2:");
+            for(i=0;i<r2;i++)
+            {
+                for(j=0;j<c2;j++)
+                {
+                    b[i][j]=sc.nextInt();
+                }
+            }
+            for(i=0;i<r1;i++)
+            {
+                for(j=0;j<c2;j++)
+                {
+                    c[i][j]=0;
+                    for(k=0;k<c1;k++)
+                    {
+                        c[i][j]=c[i][j]+a[i][k]*b[k][j];
+                    }
+                }
+            }
+            System.out.println("The multiplication obtained is:");
+            for(i=0;i<r1;i++)
+            {
+                for(j=0;j<c2;j++)
+                {
+                    System.out.print(" "+c[i][j]);
+                }
+                System.out.println();
+            }
+        }
+        
+    }
+}
