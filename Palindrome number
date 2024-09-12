@@ -1,0 +1,25 @@
+//Palindrome number or not
+import java.util.Scanner;
+class Reverse
+{
+    public static void main(String args[])
+    {
+        int num,i,rem,rev=0;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter any number:");
+        num=sc.nextInt();
+        for(i=num;i>0;i=i/10)
+        {
+            rem=i%10;
+            rev=rev*10+rem;
+        }
+        if(num==rev)
+        {
+            System.out.println("Palindrome number");
+        }
+        else
+        {
+             System.out.println("Not Palindrome number");
+        }
+    }
+}
