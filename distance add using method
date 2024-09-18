@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class distance
+{
+    int km;
+    int m;
+    int cm;
+    
+    void input(int km1, int m1 ,int cm1)
+    {
+        km = km1;
+        m = m1;
+        cm = cm1;
+    }
+    void display()
+    {
+        System.out.println("the distance is:");
+        System.out.println(+km+"km " +m+"m " +cm+"cm ");
+    }
+    public distance add(distance d)
+    {
+        distance d1=new distance();
+        d1.km=km+d.km;
+        d1.m=m+d.m;
+        d1.cm=cm+d.cm;
+        return d1;
+    }
+}
+public class disdid{
+    public static void main(String args[])
+    {
+        distance obj1=new distance();
+        distance obj2=new distance();
+        Scanner scn=new Scanner(System.in);
+        System.out.println("enter distance in km m and cm for obj1");
+        int km2=scn.nextInt();
+        int m2=scn.nextInt();
+        int cm2=scn.nextInt();
+        obj1.input(km2,m2,cm2);
+        
+        System.out.println("enter distance in km m and cm for obj2");
+        int km3=scn.nextInt();
+        int m3=scn.nextInt();
+        int cm3=scn.nextInt();
+        obj2.input(km3,m3,cm3);
+        
+        distance d3=obj1.add(obj2);
+            d3.display();
+    }
+}
+        
+        
