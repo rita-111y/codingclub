@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+class Employee {
+    int empno;
+    String name;
+    int salary;
+
+    // Input method to take employee details
+    void input(int empno1, String name1, int sal) {
+        empno = empno1;
+        name = name1;
+        salary = sal;
+    }
+
+    // Display method to show employee details
+    void display() {
+        System.out.println("Empno: " + empno);
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+    }
+
+    // Method to compare salaries of three employees
+    public void compare(Employee emp1, Employee emp2, Employee emp3) {
+        if (emp1.salary > emp2.salary && emp1.salary > emp3.salary) {
+            System.out.println(emp1.name + " has the largest salary: " + emp1.salary);
+        } else if (emp2.salary > emp1.salary && emp2.salary > emp3.salary) {
+            System.out.println(emp2.name + " has the largest salary: " + emp2.salary);
+        } else {
+            System.out.println(emp3.name + " has the largest salary: " + emp3.salary);
+        }
+    }
+}
+
+class Driver {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Creating employee objects
+        Employee obj1 = new Employee();
+        Employee obj2 = new Employee();
+        Employee obj3 = new Employee();
+
+        // Taking input for three employees
+        System.out.println("Enter details for employee 1 (empno, name, salary): ");
+        obj1.input(sc.nextInt(), sc.next(), sc.nextInt());
+
+        System.out.println("Enter details for employee 2 (empno, name, salary): ");
+        obj2.input(sc.nextInt(), sc.next(), sc.nextInt());
+
+        System.out.println("Enter details for employee 3 (empno, name, salary): ");
+        obj3.input(sc.nextInt(), sc.next(), sc.nextInt());
+
+        // Displaying employee details
+        obj1.display();
+        obj2.display();
+        obj3.display();
+
+        // Comparing salaries
+        obj1.compare(obj1, obj2, obj3);
+    }
+}
