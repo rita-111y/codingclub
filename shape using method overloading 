@@ -1,0 +1,36 @@
+class shape
+{
+  double perimetre;
+  public void calculateperimetre(int side)
+  {
+    perimetre=4*side;
+	}
+  public void calculateperimetre(double rad)
+  {
+    perimetre=2*3.14*rad;
+	}
+  public void calculateperimetre(int length ,int breadth)
+  {
+     perimetre=2*(length+breadth);
+	 }
+  public void display()
+   {
+    System.out.println("the perimetre is"+perimetre);
+   }
+}
+public class drive
+{
+   public static void main(String args[])
+   {
+     shape square=new shape();
+	 shape circle=new shape();
+	 shape rectangle=new shape();
+	 
+	 square.calculateperimetre(5);
+	 square.display();
+	 circle.calculateperimetre(6.00);
+	 circle.display();
+	 rectangle.calculateperimetre(6,7);
+	 rectangle.display();
+	 }
+}
